@@ -11,9 +11,11 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <AnimatedSplashOverlay />
-      <Stack>
-        <Stack.Screen name="index" options={{ title: 'Home' }} />
-        <Stack.Screen name="detalhes" options={{ title: 'Detalhes' }} />
+      <Stack screenOptions={{ headerBackTitle: 'Voltar' }}>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="curso" options={{ title: 'Curso' }} />
+        <Stack.Screen name="estudantes" options={{ title: 'Estudantes' }} />
+        <Stack.Screen name="perfil" options={{ title: 'Perfil' }} />
       </Stack>
     </ThemeProvider>
   );
