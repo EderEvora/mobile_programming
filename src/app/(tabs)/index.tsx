@@ -16,12 +16,20 @@ export default function HomeScreen() {
         <ThemedText type="subtitle">Universidade Explorer</ThemedText>
 
         {cursos.map((curso) => (
-          <Pressable onPress={() => router.push('/tarefas')}>
-            <ThemedView type="backgroundElement" style={styles.item}>
-            <ThemedText>Gestão de Tarefas →</ThemedText>
-            </ThemedView>
-          </Pressable>
-        ))}
+          <Pressable
+          key={curso.id}
+          onPress={() => router.push({ pathname: '/curso', params: { id: curso.id } })}>
+          <ThemedView type="backgroundElement" style={styles.item}>
+            <ThemedText>{curso.nome}</ThemedText>
+          </ThemedView>
+        </Pressable>
+      ))}
+
+      <Pressable onPress={() => router.push('/tarefas')}>
+        <ThemedView type="backgroundElement" style={styles.item}>
+          <ThemedText>Gestão de Tarefas →</ThemedText>
+        </ThemedView>
+      </Pressable>
       </SafeAreaView>
     </ThemedView>
   );
