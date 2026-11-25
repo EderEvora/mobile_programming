@@ -30,6 +30,12 @@ export default function HomeScreen() {
           <ThemedText>Gestão de Tarefas →</ThemedText>
         </ThemedView>
       </Pressable>
+
+      <Pressable onPress={() => router.push('/cartao_perfil')}>
+        <ThemedView type="backgroundElement" style={styles.item}>
+          <ThemedText>Cartão de Perfil →</ThemedText>
+        </ThemedView>
+      </Pressable>
       </SafeAreaView>
     </ThemedView>
   );
