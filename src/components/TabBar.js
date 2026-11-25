@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
+import { useCart } from '../context/CartContext';
 
 export default function TabBar({ abaAtiva, onSelecionarAba }) {
   const { tema } = useTheme();
+  const { totalItens } = useCart();
 
   const abas = [
     { key: 'produtos', label: 'Produtos' },
-    { key: 'carrinho', label: 'Carrinho' },
+    { key: 'carrinho', label: `Carrinho (${totalItens})` },
     { key: 'perfil', label: 'Perfil' },
   ];
 

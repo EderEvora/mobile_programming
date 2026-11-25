@@ -19,7 +19,7 @@ export default function ProductCard({ produto }) {
           {produto.preco} CVE
         </Text>
       </View>
-      <AddButton onPress={() => {}} />
+      <AddButton produto={produto} />
     </View>
   );
 }

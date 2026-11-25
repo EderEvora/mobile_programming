@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { ThemeProvider, useTheme } from './src/context/ThemeContext';
+import { CartProvider } from './src/context/CartContext';
 import Header from './src/components/Header';
 import TabBar from './src/components/TabBar';
 import ProdutosScreen from './src/screens/ProdutosScreen';
@@ -25,7 +26,9 @@ function AppConteudo() {
 export default function App() {
   return (
     <ThemeProvider>
-      <AppConteudo />
+      <CartProvider>
+        <AppConteudo />
+      </CartProvider>
     </ThemeProvider>
   );
 }
